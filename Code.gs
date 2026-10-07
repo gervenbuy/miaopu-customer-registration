@@ -7,7 +7,7 @@ const HEADERS = ['填寫時間','大名','手機','LINE ID','店名','職務','�
 function setup() {
   const properties = PropertiesService.getScriptProperties();
   let id = SPREADSHEET_ID || properties.getProperty('CUSTOMER_SHEET_ID');
-  const ss = id ? SpreadsheetApp.openById(id) : SpreadsheetApp.create('苗圃農產行｜客戶資料登記');
+  const ss = id ? SpreadsheetApp.openById(id) : SpreadsheetApp.create('喆圓農產行｜客戶資料登記');
   properties.setProperty('CUSTOMER_SHEET_ID', ss.getId());
   ss.setSpreadsheetTimeZone('Asia/Taipei');
   let sheet = ss.getSheetByName(SHEET_NAME);
@@ -65,5 +65,5 @@ function safeText_(value){return /^[=+@-]/.test(value) ? "'"+value : value;}
 function escapeHtml_(text){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function resultPage_(success,message){
  const title=success?'登記成功':'尚未完成登記';
- return HtmlService.createHtmlOutput('<!doctype html><html lang="zh-Hant"><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:system-ui,sans-serif;background:#faf7ed;color:#174b32;padding:50px 24px;line-height:1.8}main{max-width:480px;margin:auto;background:white;border-radius:24px;padding:36px;border:1px solid #e2e7d9}small{letter-spacing:2px}h1{font-size:28px}p{color:#667367}</style></head><body><main><small>苗圃農產行</small><h1>'+title+'</h1><p>'+escapeHtml_(message)+'</p><p>'+(success?'您可以關閉此頁。':'請回到問卷頁面確認資料後，再次送出。')+'</p></main></body></html>').setTitle(title);
+ return HtmlService.createHtmlOutput('<!doctype html><html lang="zh-Hant"><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:system-ui,sans-serif;background:#faf7ed;color:#174b32;padding:50px 24px;line-height:1.8}main{max-width:480px;margin:auto;background:white;border-radius:24px;padding:36px;border:1px solid #e2e7d9}small{letter-spacing:2px}h1{font-size:28px}p{color:#667367}</style></head><body><main><small>喆圓農產行</small><h1>'+title+'</h1><p>'+escapeHtml_(message)+'</p><p>'+(success?'您可以關閉此頁。':'請回到問卷頁面確認資料後，再次送出。')+'</p></main></body></html>').setTitle(title);
 }
