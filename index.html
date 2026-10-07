@@ -9,7 +9,7 @@
 <div class="field full"><label for="jobTitle">職務<span class="required">＊</span></label><input id="jobTitle" name="jobTitle" placeholder="例如：負責人、採購、店長" autocomplete="organization-title" maxlength="80" required><p class="hint">個人客戶請填「個人」。</p></div>
 <div class="field full"><label for="address">店址<span class="required">＊</span></label><textarea id="address" name="address" placeholder="請輸入縣市、區鄉鎮、路名及門牌" autocomplete="street-address" maxlength="500" required></textarea><p class="hint">請填寫完整店家或配送地址。</p></div></div><div class="bottom"><p class="note">送出後將開啟結果頁，請以結果頁顯示「登記成功」確認資料已儲存。</p><button class="submit" type="submit">送出客戶資料</button><p id="status" class="status" role="status"></p></div></form></section><footer class="footer">苗圃農產行 · 新鮮蔬菜 · 冷藏配送</footer></main><script>
 // 將下方網址替換成 Apps Script 網頁應用程式部署的 /exec 網址。
-const SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_EXEC_URL_HERE';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxXznjRbUNumwogcj0Ac3tsPc3AAaGOZWOXujKnNFIuWy5GH39NTU3KG3bU0WYpgHdm/exec';
 const form=document.getElementById('registration');
 form.addEventListener('submit',event=>{
  const status=document.getElementById('status');
